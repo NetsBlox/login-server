@@ -20,7 +20,12 @@ registerBtn.onclick = () => {
         const agreeToTos = document.getElementById('tos').checked;
         if (agreeToTos) {
             // Register!
-            // TODO
+            const redirectUrl = getQueryStringValue('redirect') || SERVER_URL;
+            const auth = new AuthHandler(SERVER_URL);
+            auth.register(username, email, password)
+                .then(request => auth.login(username, password))
+                .then(request => window.location = redirectUrl)
+                .catch(err => M.toast({html: err.request.responseText}));
         } else {
             M.toast({html: 'Please agree to the Terms of Service'});
         }
