@@ -9,6 +9,7 @@ app.engine('pug', require('pug').__express);
 app.set('views', path.join(__dirname, 'views'));
 
 console.log('authenticating with', SERVER_ADDRESS);
+app.get('/', (req,res) => res.render('index.pug',{SERVER_ADDRESS: SERVER_ADDRESS}));
 app.get('/index.html', (req,res) => res.render('index.pug',{SERVER_ADDRESS: SERVER_ADDRESS}));
 
 app.listen(PORT, err => {
