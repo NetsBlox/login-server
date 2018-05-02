@@ -1,0 +1,48 @@
+html
+    head
+        link(rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons")
+        link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        title NetsBlox
+    body
+        .blue-grey.lighten-5.valign-wrapper(style="height:100%")
+            .container
+                .row
+                    .col.s12.m8.offset-m2.l6.offset-l3
+                        .card
+                            .card-content
+                                img.logo.img-responsive(width="60px" src="./full_logo.png" alt="NetsBlox")
+                                br
+                                br
+                                span.card-title Create account for NetsBlox
+                                .row
+                                    .input-field
+                                        input#username(type="text")
+                                        label(for="username") Username
+                                .row
+                                    .input-field
+                                        input#email(type="text")
+                                        label(for="email") Email
+                                .row
+                                    .input-field
+                                        input#password(type="password")
+                                        label(for="password") Password
+                                .row
+                                    .input-field
+                                        input#confirm(type="password")
+                                        label(for="confirm") Confirm Password
+                                .row
+                                    input#tos(type="checkbox")
+                                    label(for="tos") I have read and agree to the Terms of Service
+
+                                button#login.btn.waves-effect.waves-light Login
+                        .row
+                            .col.offset-m4
+                                span Privacy
+                            .col.offset-m6
+                                span Terms Of Service
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js")
+        script var SERVER_URL = '#{SERVER_ADDRESS}';
+        script(src="./register.js")
+        script(src="./lib/sha512.js")
+        script(src="./lib/auth.js")

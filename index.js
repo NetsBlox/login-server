@@ -11,6 +11,7 @@ app.set('views', path.join(__dirname, 'views'));
 console.log('authenticating with', SERVER_ADDRESS);
 app.get('/', (req,res) => res.render('index.pug',{SERVER_ADDRESS: SERVER_ADDRESS}));
 app.get('/index.html', (req,res) => res.render('index.pug',{SERVER_ADDRESS: SERVER_ADDRESS}));
+app.get('/register.html', (req,res) => res.render('register.pug',{SERVER_ADDRESS: SERVER_ADDRESS}));
 
 app.listen(PORT, err => {
     if (err) {
