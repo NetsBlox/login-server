@@ -26,7 +26,8 @@ html
                                 .row
                                 button#login.btn.waves-effect.waves-light Login
         script(src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js")
-        script var SERVER_URL = '#{SERVER_ADDRESS}';
+        script(src="./common.js")
+        script var SERVER_URL = getQueryStringValue('url') || '#{SERVER_ADDRESS}';
         script(src="./index.js")
         script(src="./lib/sha512.js")
         script(src="./lib/auth.js")

@@ -21,7 +21,7 @@ html
                                         label(for="username") Username
                                 .row
                                     .input-field
-                                        input#email(type="text")
+                                        input#email(type="email" class="validate")
                                         label(for="email") Email
                                 .row
                                     .input-field
@@ -35,14 +35,14 @@ html
                                     input#tos(type="checkbox")
                                     label(for="tos") I have read and agree to the Terms of Service
 
-                                button#login.btn.waves-effect.waves-light Login
+                                button#register.btn.waves-effect.waves-light Login
                         .row
-                            .col.offset-m4
-                                span Privacy
-                            .col.offset-m6
-                                span Terms Of Service
+                            .col.s8.m5.offset-s4.offset-m7.l3.offset-l9
+                                a#privacyLink(style="padding-left: 12px") Privacy
+                                a#tosLink(style="padding-left: 12px") Terms Of Service
         script(src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js")
-        script var SERVER_URL = '#{SERVER_ADDRESS}';
+        script(src="./common.js")
+        script var SERVER_URL = getQueryStringValue('url') || '#{SERVER_ADDRESS}';
         script(src="./register.js")
         script(src="./lib/sha512.js")
         script(src="./lib/auth.js")
