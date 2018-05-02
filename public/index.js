@@ -12,8 +12,9 @@ loginBtn.onclick = function() {
     //const remember = document.getElementById('remember').checked;
 
     // Login!
-	const redirectUrl = getQueryStringValue('redirect') || SERVER_URL;
-	const auth = new AuthHandler(SERVER_URL || window.location.origin);
+    const loginUrl = getQueryStringValue('url') || SERVER_URL;
+	const redirectUrl = getQueryStringValue('redirect') || loginUrl;
+	const auth = new AuthHandler(loginUrl);
 	auth.login(username, password)
 		// If login successful, redirect to the next url
 		.then(request => window.location = redirectUrl)
