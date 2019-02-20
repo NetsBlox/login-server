@@ -1,5 +1,6 @@
 // Set up the login button
 const loginBtn = document.getElementById('login');
+const registerLink = document.getElementById('register');
 const passwordField = document.getElementById('password');
 const usernameField = document.getElementById('username');
 
@@ -19,6 +20,9 @@ loginBtn.onclick = function() {
     .then(request => window.location = redirectUrl)
     .catch(err => M.toast({html: `Login Failed: ${err.request.responseText}`}));
 };
+
+const queries = document.location.href.replace(/[^?]+/, '');
+registerLink.href = '/register.html' + queries;
 
 usernameField.onkeyup = event => {
   event.preventDefault();
