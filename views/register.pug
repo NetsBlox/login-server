@@ -35,11 +35,12 @@ html
                                     input#tos(type="checkbox")
                                     label(for="tos") I have read and agree to the Terms of Service
 
-                                button#register.btn.waves-effect.waves-light Login
-                        .row
-                            .col.s8.m5.offset-s4.offset-m7.l3.offset-l9
-                                a#privacyLink(style="padding-left: 12px") Privacy
-                                a#tosLink(style="padding-left: 12px") Terms Of Service
+                                button#register.btn.waves-effect.waves-light Register & Login
+                .row
+                    .col.s12.m8.offset-m2.l6.offset-l3(style='text-align:center;')
+                        a#privacyLink Privacy
+                        span &nbsp -- &nbsp
+                        a#tosLink Terms Of Service
         script(src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js")
         script(src="./common.js")
         script var SERVER_URL = getQueryStringValue('url') || '#{SERVER_ADDRESS}';
