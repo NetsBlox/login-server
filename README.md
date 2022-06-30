@@ -5,3 +5,6 @@ For example, suppose you want to integrate NodeBB and NetsBlox on different subd
 
 ## Quick Start
 Install NodeJS LTS. Clone the repo. Then run `npm install` and `npm start` from the project root.
+
+## Configuration
+The backend NetsBlox address is customized via the `EDITOR_ADDRESS` environment variable.
