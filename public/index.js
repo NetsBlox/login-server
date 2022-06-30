@@ -14,11 +14,11 @@ loginBtn.onclick = function() {
 
   // Login!
   const redirectUrl = getQueryStringValue('redirect') || SERVER_URL;
-  const auth = new AuthHandler(SERVER_URL);
+  const auth = new Cloud(SERVER_URL);
   auth.login(username, password)
     // If login successful, redirect to the next url
     .then(request => window.location = redirectUrl)
-    .catch(err => M.toast({html: `Login Failed: ${err.request.responseText}`}));
+    .catch(err => M.toast({html: `Login Failed: ${err.label}`}));
 };
 
 const queries = document.location.href.replace(/[^?]+/, '');
