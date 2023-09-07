@@ -34,7 +34,7 @@ jobs:
       - name: Publish to Docker Hub
         uses: elgohr/Publish-Docker-Github-Action@v4
         with:
-          name: netsblox/services
+          name: netsblox/login
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
           tags: "${{ env.TAG }},${{ env.RELEASE_TAG }}"
