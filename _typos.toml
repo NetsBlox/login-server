@@ -1,0 +1,23 @@
+[files]
+extend-exclude = [
+    # dear lord why is this not ignored by default
+    "_typos.toml",
+
+    # general ignored file types
+    "*.jsonl",
+    "*.list",
+    "*.csv",
+    "*.png",
+    "*.pdf",
+    "*.tex",
+    "*.xml",
+    "*.svg",
+    "*.min.js",
+
+    # auto-generated files
+    "package-lock.json",
+
+    # select submodule subdirectories
+    "public/lib"
+]
+
