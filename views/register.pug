@@ -43,7 +43,11 @@ html
                         a#tosLink Terms Of Service
         script(src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js")
         script(src="./common.js")
-        script var SERVER_URL = getQueryStringValue('url') || '#{SERVER_ADDRESS}';
+        script var config = {
+            |   cloud: getQueryStringValue('url') || '#{CLOUD_URL}',
+            |   redirect: getQueryStringValue('redirect') || '#{REDIRECT_URL}',
+            |   editor: getQueryStringValue('editor') || '#{EDITOR_URL}',
+            | };
         script(src="./register.js")
         script(src="./lib/sha512.js")
         script(src="./lib/auth.js")

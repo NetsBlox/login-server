@@ -13,11 +13,10 @@ loginBtn.onclick = function () {
   //const remember = document.getElementById('remember').checked;
 
   // Login!
-  const redirectUrl = getQueryStringValue("redirect") || SERVER_URL;
-  const auth = new Cloud(SERVER_URL);
+  const auth = new Cloud(config.cloud);
   auth.login(username, password)
     // If login successful, redirect to the next url
-    .then((request) => window.location = redirectUrl)
+    .then((request) => window.location = config.redirect)
     .catch((err) => M.toast({ html: `Login Failed: ${err.label}` }));
 };
 
