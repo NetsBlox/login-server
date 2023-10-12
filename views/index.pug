@@ -34,7 +34,7 @@ html
         script var config = {
             |   cloud: getQueryStringValue('url') || '#{CLOUD_URL}',
             |   redirect: getQueryStringValue('redirect') || '#{REDIRECT_URL}',
+            |   editor: getQueryStringValue('editor') || '#{EDITOR_URL}',
             | };
-            | var REDIRECT_URL = '#{REDIRECT_URL}';
         script(src="./index.js")
         script(src="./lib/cloud.js")

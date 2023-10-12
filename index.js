@@ -3,8 +3,9 @@ const express = require("express");
 const PORT = process.env.PORT || 8000;
 const CLOUD_URL = process.env.CLOUD_ADDRESS ||
   "https://cloud.netsblox.org";
-const REDIRECT_URL = process.env.EDITOR_ADDRESS ||
+const EDITOR_URL = process.env.EDITOR_ADDRESS ||
   "https://editor.netsblox.org";
+const REDIRECT_URL = process.env.REDIRECT_URL || EDITOR_URL;
 
 let app = express();
 app.use(express.static(path.join(__dirname, "public")));
@@ -16,6 +17,7 @@ console.log("default redirect URL:", REDIRECT_URL);
 const urls = {
   CLOUD_URL,
   REDIRECT_URL,
+  EDITOR_URL,
 };
 app.get(
   "/",

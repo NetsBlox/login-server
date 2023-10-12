@@ -2,8 +2,8 @@
 const privacyLink = document.getElementById("privacyLink");
 const tosLink = document.getElementById("tosLink");
 
-privacyLink.setAttribute("href", `${REDIRECT_URL}/privacy.html`);
-tosLink.setAttribute("href", `${REDIRECT_URL}/tos.html`);
+privacyLink.setAttribute("href", `${config.editor}/privacy.html`);
+tosLink.setAttribute("href", `${config.editor}/tos.html`);
 privacyLink.setAttribute("target", "_blank");
 tosLink.setAttribute("target", "_blank");
 
