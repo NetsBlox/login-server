@@ -26,7 +26,7 @@ registerBtn.onclick = async () => {
         cloud.login(username, password);
         window.location = config.redirect;
       } catch (err) {
-        M.toast({ html: err.request.responseText });
+        M.toast({ html: err.message });
       }
     } else {
       M.toast({ html: "Please agree to the Terms of Service" });
