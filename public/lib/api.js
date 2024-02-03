@@ -48,6 +48,15 @@
     async createUser(userData) {
       return await this.post(`/users/create`, userData);
     }
+    /**
+     * Email the given address with a list of all users registered with the given
+     * email address.
+     */
+    async forgotUsername(email) {
+      const url = `/users/forgot-username`;
+      const opts = { method: "post", body: JSON.stringify(email) };
+      await this.fetch(url, opts);
+    }
     async login(loginData) {
       return await this.post(`/users/login`, loginData);
     }
@@ -196,6 +205,20 @@
     }
     async getProjectNamedXml(owner, name) {
       return await this.fetchText(`/projects/user/${owner}/${name}/xml`);
+    }
+    async getProjectThumbnail(id, aspectRatio) {
+      const url = this.getProjectThumbnailPath(id, aspectRatio);
+      return await this.fetch(url);
+    }
+    getProjectThumbnailPath(id, aspectRatio) {
+      let url = `/projects/id/${id}/thumbnail`;
+      if (aspectRatio) {
+        url += `?aspectRatio=${aspectRatio}`;
+      }
+      return url;
+    }
+    getProjectThumbnailUrl(id, aspectRatio) {
+      return this.baseUrl + this.getProjectThumbnailPath(id, aspectRatio);
     }
     async getProjectNamedMetadata(owner, name) {
       return await this.fetchJson(`/projects/user/${owner}/${name}/metadata`);
