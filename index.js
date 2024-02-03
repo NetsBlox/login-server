@@ -37,6 +37,11 @@ app.get(
   (_req, res) => res.render("forgot-password.pug", urls),
 );
 
+app.get(
+  "/forgot-username.html",
+  (_req, res) => res.render("forgot-username.pug", urls),
+);
+
 app.listen(PORT, (err) => {
   if (err) {
     throw err;
