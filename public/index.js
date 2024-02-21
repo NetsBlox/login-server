@@ -4,7 +4,7 @@ const registerLink = document.getElementById("register");
 const passwordField = document.getElementById("password");
 const usernameField = document.getElementById("username");
 
-loginBtn.onclick = function () {
+loginBtn.onclick = async function () {
   // Get the username and password
   const username = usernameField.value;
   const password = passwordField.value;
@@ -13,11 +13,14 @@ loginBtn.onclick = function () {
   //const remember = document.getElementById('remember').checked;
 
   // Login!
-  const auth = new Cloud(config.cloud);
-  auth.login(username, password)
+  const api = new NetsBloxApi(config.cloud);
+  try {
+    await api.login({ credentials: { NetsBlox: { username, password } } });
     // If login successful, redirect to the next url
-    .then((request) => window.location = config.redirect)
-    .catch((err) => M.toast({ html: `Login Failed: ${err.label}` }));
+    window.location = config.redirect;
+  } catch (err) {
+    M.toast({ html: `Login Failed: ${err.message}` });
+  }
 };
 
 const queries = document.location.href.replace(/[^?]+/, "");
